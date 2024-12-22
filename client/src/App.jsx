@@ -1,49 +1,34 @@
-import { Outlet } from 'react-router-dom';
-import { setContext } from '@apollo/client/link/context';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
-
-import { StoreProvider} from './utils/store-context';
-import Nav from './components/Nav';
-import Login from './components/Login'
-
-import Auth from './utils/auth'
-
-import './app.scss'
-
-const httpLink = createHttpLink({ uri: '/graphql'});
-
-const authLink = setContext((_, {headers}) => {
-  const token = Auth.getToken();
-
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : ''
-    }
-  }
-})
-
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
-});
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
+  const [count, setCount] = useState(0)
 
   return (
-    <ApolloProvider client={client}>
-      <StoreProvider>
-      <div id="app-shell">
-        <Nav />
-        {Auth.loggedIn() ? <Outlet /> : <Login />}
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
-      </StoreProvider>
-    </ApolloProvider>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
   )
 }
 
