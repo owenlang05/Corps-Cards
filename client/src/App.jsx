@@ -1,13 +1,18 @@
 import React, {useState} from 'react'
 import FlashcardList from './components/FlashcardList'
+import Navigation from './components/Navbar'
 import './app.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [flashcards, setFlashcards] = useState(SAMPLE_FLASHCARDS)
   return (
 
     <>
-      <FlashcardList flashcards = {flashcards} />
+      <Navigation/>
+      <div className='container'>
+        <FlashcardList flashcards = {flashcards} />
+      </div>
     </>
   )
 }
