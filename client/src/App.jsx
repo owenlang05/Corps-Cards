@@ -10,7 +10,7 @@ function App() {
 
     <>
       <Navigation/>
-        <div className='container'>
+        <div className='carasel-container'>
             <FlashcardList flashcards = {flashcards} />
         </div>
     </>

@@ -2,24 +2,19 @@ body {
     background-color: #c8d0d2;
     margin: 0;
 }
-.container {
-    max-width: 80%;
-    margin-left: 200px;
-    margin: 1rem 2rem;
+.carasel-container {
+    display: flex;
+    max-width: 50%;
+    flex-flow: column wrap;
+    margin-left: auto;
+    margin-right: auto;
 }
-.sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-}
+
 .flashcard {
-    height: 300px;
+    padding: 7rem;
     display: flex;
     margin-top: 2rem;
+    margin-bottom: 1rem;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -51,19 +46,6 @@ body {
     transform: rotateY(180deg);
 }
 
-.flashcard-options {
-    margin-top: .5rem;
-}
-
-.flashcard-option {
-    margin-top: 0.25rem;
-    color: #555;
-    font-size: .75rem;
-}
-
-.flashcard-option:first-child {
-    margin-top: 0;
-}
 .card-carosel {
     display: flex;
     justify-content: center;
