@@ -1,9 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot} from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App.jsx'
 
-import Home from './pages/index.jsx'
+import App from './App.jsx'
+import Decks from './pages/decks.jsx';
+import Home from './pages/flashcards.jsx'
 
 const router = createBrowserRouter([
     {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
         {
           index: true,
           element: <Home />
+        },
+        {
+          path: '/decks',
+          element: <Decks/>
         }
       ]
     }
