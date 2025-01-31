@@ -1,6 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Form from 'react-bootstrap/Form'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function Navigation() {
@@ -26,6 +30,21 @@ export default function Navigation() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+
+      <Form inline>
+        <Row>
+          <Col xs="auto">
+            <Form.Control
+              type="text"
+              placeholder="Search decks"
+              className=" mr-sm-2"
+            />
+          </Col>
+          <Col xs="auto">
+            <Button type="submit" variant='outline-dark'>Submit</Button>
+          </Col>
+        </Row>
+      </Form>
       </Container>
     </Navbar>
   );

@@ -4,7 +4,10 @@ import DeckList from "../components/DeckList"
 export default function Decks() {
   const [decks, setDecks] = useState(SAMPLE_DECKS)
   return(
-    <DeckList decks={SAMPLE_DECKS}/>
+    <>
+      <DeckList decks={SAMPLE_DECKS}/>
+    </>
+    
   )
 }
 
