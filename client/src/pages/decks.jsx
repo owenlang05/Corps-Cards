@@ -1,9 +1,11 @@
-import React from "react"
+import React, {useState} from "react"
+import DeckList from "../components/DeckList"
 
 export default function Decks() {
-    return(
-        <p>Decks</p>
-    )
+  const [decks, setDecks] = useState(SAMPLE_DECKS)
+  return(
+    <DeckList decks={SAMPLE_DECKS}/>
+  )
 }
 
 

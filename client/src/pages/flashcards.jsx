@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import FlashcardList from '../components/FlashcardList'
-import Navigation from '../components/Navbar'
 
 export default function Home () {
     const [flashcards, setFlashcards] = useState(SAMPLE_FLASHCARDS)
