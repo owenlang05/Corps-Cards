@@ -1,9 +1,21 @@
 const typeDefs = `
     type User {
         _id: ID
-        firstName: String
-        lastName: String
         email: String
+    }
+
+    type Flashcard {
+        question: String
+        answer: String
+        options: [String]
+    }
+
+    type Deck {
+        _id: ID
+        title: String
+        class: String
+        flashcardList: [Flashcard]
+        public: Boolean
     }
 
     type Auth {
@@ -12,10 +24,13 @@ const typeDefs = `
 
     type Query {
         user: User
+        searchDecks(class: String!): [Deck]
+        getDeck(id: ID!): Deck
+        me: User
     }
 
     type Mutation {
-        signin(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+        signup(email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
     }
 `;

@@ -1,19 +1,10 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const {deckSchema} = require('./Deck')
 
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-    firstName: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    lastName: {
-        type: String,
-        required: true,
-        trim: true
-    },
     email: {
         type: String,
         required: true,
@@ -24,6 +15,7 @@ const userSchema = new Schema({
         required: true,
         minlength: 5
     },
+    decks: [deckSchema]
 });
 
 userSchema.pre('save', async function (next) {

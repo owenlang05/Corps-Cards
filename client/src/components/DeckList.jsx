@@ -6,7 +6,7 @@ export default function DeckList({decks}) {
         <div>
             {decks?.map(({id, name}) => (
                 <div key={id}>
-                    <a>{name}</a>
+                    <p>{name}</p>
                 </div>
             ))}
         </div>
